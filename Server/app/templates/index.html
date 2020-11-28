@@ -1,6 +1,5 @@
 <html>
     <head>
-
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item active" aria-current="page">PS5 NEWS</li>
@@ -24,8 +23,40 @@
                 <h2>Engadget Posts</h2>
                 <br>
                 {% for post in posts %}
-                <div><p class="lead"> <b> <a href={{post.link}}> {{ post.title }} </a> </b> - {{ post.description }} - {{ post.date_posted }}</p></div>
+                <div><p class="lead"> <b> <a href={{post.link}}> {{ post.title }} </a> </b> </p></div>
+                <p> {{ post.description }} - {{ post.date_posted }}
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal{{post.modalid}}">
+                  [Quick Read]
+                </button>
+                </p>
+                <!-- <br> -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal{{post.modalid}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Quick View</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                       <p>
+                        {% for b in post.body %}
+                          {{b|safe}}
+                        {% endfor %}
+                       </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 {% endfor %}
+
                 <hr>
                 <h2>Tweets</h2>
                 <br>
@@ -43,6 +74,18 @@
                     {% endfor %}
             {% endblock %}
         </div>
+
+        <hr>
+
+       
+
+
+        
+
+
+<hr>
+
+
     </body>
 </html>
 
