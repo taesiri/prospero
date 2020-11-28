@@ -27,6 +27,26 @@ Sentiment analysis is done with the Huggingface Transformers libraries, without 
 
 More information can be found in [this](Analysis/sentiment_analysis.ipynb) JupyterNotebook.
 
+## How to Run
+
+First modify [this line](https://github.com/taesiri/prospero/blob/main/Crawlers/Engadget/encrawler.py#L10) to the location of Chrome Web Driver.
+
+* To Run Crawlers:
+
+```bash
+python twcrawler.py
+
+# or
+
+python encrawler.py
+```
+
+* To run the webserver, In Server directory, run the following code
+
+```bash
+flask run
+```
+
 ## Requirements
 
 All dependencies are listed in requirements.txt. You can use pip to install them as follows:
