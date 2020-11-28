@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Change DRIVER_PATH appropriately
-DRIVER_PATH = '/Users/taesiri/Downloads/chromedriver'
+DRIVER_PATH = '/PATH/TO/DRIVER/chromedriver'
 ENGADGET_URL = 'https://www.engadget.com/gaming/'
 
 # Start the driver
