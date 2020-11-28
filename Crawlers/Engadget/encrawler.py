@@ -17,7 +17,7 @@ driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 driver.get(ENGADGET_URL)
 
 # Let's scroll the page for ten times, and Click on LoadMore button
-for i in range(1, 3):
+for i in range(1, 10):
   driver.execute_script("window.scrollTo(0, document.body.scrollHeight-75);")
   load_more_button = driver.find_element_by_xpath('//*[@id="LoadMore"]')
   driver.execute_script("arguments[0].click();", load_more_button)
