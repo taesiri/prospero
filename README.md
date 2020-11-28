@@ -4,7 +4,7 @@ Prospero crawls `Engadget` and `Twitter` for posts related to `PS5` and show the
 
 ## How it works
 
-Prospero consists of different parts for doing various tasks. It uses `Selenium` and `Chrome Driver` for crawling `Engadget`. For `Twitter`, instead of using its official API, or using a similar technique for crawling `Engadget`, I opted to use `Twins`. `Twins` is one of the most advanced Twitter crawlers, yet lots of people don't know about it. Here are different libraries used in building Prospero:
+Prospero consists of different parts for doing various tasks. It uses `Selenium` and `Chrome Driver` for crawling `Engadget`. For `Twitter`, instead of using its official API, or using a similar technique for crawling `Engadget`, I opted to use `Twint`. `Twint` is one of the most advanced Twitter crawlers, yet lots of people don't know about it. Here are different libraries used in building Prospero:
 
 1. [Selenium](https://selenium-python.readthedocs.io/)
 1. [Twint](https://github.com/twintproject/twint)
