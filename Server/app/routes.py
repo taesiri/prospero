@@ -20,8 +20,7 @@ def index():
 
     # Load Tweets
     all_tweets = list(open('app/data/twitter.json'))
-    tweets = [json.loads(t) for t in all_tweets][:25] # Get only the first 25th
-
+    tweets = [json.loads(t) for t in all_tweets][-25:] # Last 25 Tweets
     # Returning the view, filled with data!
     return render_template('index.html', title='Prospero News!', posts=engadget_posts, tweets=tweets)
 
