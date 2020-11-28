@@ -3,8 +3,11 @@ from selenium.webdriver.chrome.options import Options
 import time
 import json
 
+import requests
+from bs4 import BeautifulSoup
+
 # Change DRIVER_PATH appropriately
-DRIVER_PATH = '/PATH/TO/DRIVER/chromedriver'
+DRIVER_PATH = '/Users/taesiri/Downloads/chromedriver'
 ENGADGET_URL = 'https://www.engadget.com/gaming/'
 
 # Start the driver
@@ -14,7 +17,7 @@ driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 driver.get(ENGADGET_URL)
 
 # Let's scroll the page for ten times, and Click on LoadMore button
-for i in range(1, 10):
+for i in range(1, 3):
   driver.execute_script("window.scrollTo(0, document.body.scrollHeight-75);")
   load_more_button = driver.find_element_by_xpath('//*[@id="LoadMore"]')
   driver.execute_script("arguments[0].click();", load_more_button)
@@ -37,13 +40,23 @@ for post in posts:
       'title': title,
       'link': link,
       'description': description,
-      'date_posted': date_posted
+      'date_posted': date_posted,
     })
 
 # Dismiss the Browser
 driver.quit()
 
-# Dump the results as json file
+# Get Post's Body using Requests and Soup
+def get_boy(url):
+  r = requests.get(url)
+  soup = BeautifulSoup(r.content, 'html.parser')
+  article_body = soup.find_all(class_='article-text')
+  return article_body
 
+for post in list_of_posts:
+  post['body'] = [str(paragraph) for paragraph in get_boy(post['link'])]
+
+# Dump the results as json file
 with open('engadget.json', 'w') as f:
   json.dump(list_of_posts , f)
+
