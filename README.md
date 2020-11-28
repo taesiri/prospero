@@ -16,4 +16,6 @@ Prospero consists of different parts for doing various tasks. It uses `Selenium`
 
 Sentiment analysis is done with the Huggingface Transformers libraries, without any re-training, transfer learning, or fine-tuning. The results can be very wrong in some cases. Here are a plot showing the sentiment ratio for 100 randomly chosen tweets:
 
-![](Images/sent.png)
+![Sentiment Analysis](Images/sent.png)
+
+More information can be found in [this](Analysis/sentiment_analysis.ipynb) JupyterNotebook.
