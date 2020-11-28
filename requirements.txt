@@ -1,0 +1,17 @@
+certifi==2020.11.8
+click==7.1.2
+Flask==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+selenium==3.141.0
+urllib3==1.26.2
+Werkzeug==1.0.1
+wordcloud==1.8.0
+numpy==1.19.0
+praw==7.1.0
+matplotlib==3.1.1
+psaw==0.0.12
+seaborn==0.11.0
+matplotlib_venn==0.11.6
+pandas==0.25.1
